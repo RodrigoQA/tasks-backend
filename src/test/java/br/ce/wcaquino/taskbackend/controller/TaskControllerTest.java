@@ -54,7 +54,7 @@ public class TaskControllerTest {
 public void naoDeveSalvarTaskComDataPassada(){
     try {
         Task novaTask = new Task();
-        novaTask.setDueDate(LocalDate.of(2023, 01,01));
+        novaTask.setDueDate(LocalDate.of(2013, 01,01));
         novaTask.setTask("Descricao nao pode ser null");
         controller.save(novaTask);
         Assert.fail("Não deveria chegar aqui!!");
