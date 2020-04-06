@@ -16,7 +16,7 @@ pipeline {
       deploy adapters: [tomcat8(credentialsId: 'LoginTomCat', path: '', url: 'http://localhost:8001')], contextPath: 'tasks-backend', war: 'target/tasks-backend.war'
           }
       }
-  stage ('Deploy Frontend'){
+  stage ('API Test'){
       steps {
 git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-frontend'
     bat 'mvn test'
