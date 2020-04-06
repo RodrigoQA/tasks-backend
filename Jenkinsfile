@@ -19,7 +19,7 @@ pipeline {
   stage ('API Test'){
       steps {
           dir('api-test'){
-git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-backend'
+git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-api-test'
     bat 'mvn test'
         
          }
