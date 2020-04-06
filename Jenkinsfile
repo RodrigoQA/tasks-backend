@@ -25,5 +25,16 @@ git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-api-t
          }
        }
     }
-  }
+  
+   stage ('Deploy Frontend'){
+           steps {
+                dir('Frontend'){
+                    git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-frontend'
+                      bat 'mvn clean package'
+      deploy adapters: [tomcat8(credentialsId: 'LoginTomCat', path: '', url: 'http://localhost:8001')], contextPath: 'tasks', war: 'target/tasks.war'
+
+             }
+          }
+       }
+    }
 }
