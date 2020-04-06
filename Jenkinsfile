@@ -36,5 +36,15 @@ git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-api-t
              }
           }
        }
+
+ stage ('Funcional Test'){
+    steps {
+      dir('funcional-test'){
+         git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/task-funcional-test'
+         bat 'mvn test'
+  
+             }    
+          }
+       }
     }
 }
