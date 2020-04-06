@@ -18,7 +18,7 @@ pipeline {
       }
   stage ('API Test'){
       steps {
-git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-frontend'
+git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-backend'
     bat 'mvn test'
         }
      }
