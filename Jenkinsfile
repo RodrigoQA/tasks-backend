@@ -46,13 +46,9 @@ git credentialsId: 'LoginGitHub', url: 'https://github.com/RodrigoQA/tasks-api-t
              }    
           }
        }
-   stage ('Deploy Prod'){
-    steps {
-  bat 'docker-compose build'
-  bat 'docker-compose up -d'
-   
-          }
-       }
     }
- }
- 
+
+}
+
+
+
